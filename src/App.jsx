@@ -1,5 +1,4 @@
 import './App.css'
-import {useState} from "react";
 import Dashboard from "@components/Dashboard";
 import Form from "@components/Form";
 import useLocalStorage from "@hooks/useLocalStogare/useLocalStorage.jsx";
@@ -37,7 +36,7 @@ function App() {
 
                 <Dashboard {...data}/>
 
-                <Form setData={update}/>
+                <Form {...data} setData={update}/>
 
                 <h3 className="App-result">Necesitas capturar un pokemon
                     cada <code> {tiempoNecesarioDeCapturaPorPokemonPorDia}</code> minutos</h3>
