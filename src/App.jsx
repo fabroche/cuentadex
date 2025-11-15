@@ -2,14 +2,17 @@ import './App.css'
 import {useState} from "react";
 import Dashboard from "@components/Dashboard";
 import Form from "@components/Form";
+import useLocalStorage from "@hooks/useLocalStogare/useLocalStorage.jsx";
 
 function App() {
-
-    const [data, setData] = useState({
-        totalPokedex: 230,
-        totalCapturados: 167,
-        cantidadDeDiaFaltante: 7,
-        tiempoDisponibleDiario: 120
+    const {data, update} = useLocalStorage({
+        key: 'cuentadex',
+        defaultValue: {
+            totalPokedex: 230,
+            totalCapturados: 167,
+            cantidadDeDiaFaltante: 7,
+            tiempoDisponibleDiario: 120
+        }
     });
 
     const tiempoNecesarioDeCapturaPorPokemonPorDia = calculateRemainingTime(data) || 0;
@@ -34,7 +37,7 @@ function App() {
 
                 <Dashboard {...data}/>
 
-                <Form setData={setData}/>
+                <Form setData={update}/>
 
                 <h3 className="App-result">Necesitas capturar un pokemon
                     cada <code> {tiempoNecesarioDeCapturaPorPokemonPorDia}</code> minutos</h3>
