@@ -13,7 +13,12 @@ function useLocalStorage({key, defaultValue}) {
         window.localStorage.setItem(key, JSON.stringify(data));
     }
 
-    return {data, read, update};
+    function updateOne(dataKey, value) {
+        setData({...data, [dataKey]: value});
+        window.localStorage.setItem(key, JSON.stringify({...data, [dataKey]: value}));
+    }
+
+    return {data, read, update, updateOne};
 }
 
 export default useLocalStorage;
