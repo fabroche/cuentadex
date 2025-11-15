@@ -1,0 +1,42 @@
+.App-stats-container {
+    display: flex;
+    flex: 1 1;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 700px;
+    gap: 24px;
+}
+
+.App-stats-container div:last-child:nth-child(odd) {
+    flex-grow: 2;
+}
+
+.stats-card {
+    border: 1px solid #dbdbdb;
+    border-radius: 20px;
+    padding: 24px 12px;
+    width: 300px;
+    /*max-width: 300px;*/
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    transition: all 0.3s ease-in-out;
+}
+
+.stats-card:hover {
+    transform: scale(1.05);
+}
+
+.stats-card__title {
+    font-size: 18px;
+    font-weight: 400;
+    margin: 0;
+}
+
+.stats-card__value {
+    margin: 0;
+    font-size: 32px;
+    font-weight: 700;
+}
