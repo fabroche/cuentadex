@@ -1,13 +1,20 @@
 import React from 'react';
 import './Form.css';
 
-function Form({totalPokedex, totalCapturados, cantidadDeDiaFaltante, tiempoDisponibleDiario, setData}) {
+function Form({
+                  totalPokedex,
+                  totalCapturados,
+                  tiempoDisponibleDiario,
+                  fechaDeFinalizacion,
+                  setData
+              }) {
+
+
     function handleSubmit(e) {
         e.preventDefault();
         const form = e.target;
         const formData = new FormData(form);
         const data = Object.fromEntries(formData);
-        console.log(data)
         setData(data);
     }
 
@@ -38,19 +45,19 @@ function Form({totalPokedex, totalCapturados, cantidadDeDiaFaltante, tiempoDispo
                         required
                     />
                 </div>
-                <div>
-                    <label htmlFor="cantidadDeDiaFaltante">Dias faltantes para completar la
-                        pokedex</label>
-                    <input
-                        type="number"
-                        id="cantidadDeDiaFaltante"
-                        name="cantidadDeDiaFaltante"
-                        placeholder={cantidadDeDiaFaltante}
-                        defaultValue={cantidadDeDiaFaltante}
-                        required
+                {/*<div>*/}
+                {/*    <label htmlFor="cantidadDeDiaFaltante">Dias faltantes para completar la*/}
+                {/*        pokedex</label>*/}
+                {/*    <input*/}
+                {/*        type="number"*/}
+                {/*        id="cantidadDeDiaFaltante"*/}
+                {/*        name="cantidadDeDiaFaltante"*/}
+                {/*        placeholder={cantidadDeDiaFaltante}*/}
+                {/*        defaultValue={cantidadDeDiaFaltante}*/}
+                {/*        required*/}
 
-                    />
-                </div>
+                {/*    />*/}
+                {/*</div>*/}
                 <div>
 
                     <label htmlFor="tiempoDisponibleDiario">Tiempo disponible diario (en minutos)</label>
@@ -61,6 +68,19 @@ function Form({totalPokedex, totalCapturados, cantidadDeDiaFaltante, tiempoDispo
                         placeholder={tiempoDisponibleDiario}
                         defaultValue={tiempoDisponibleDiario}
                         required
+                    />
+                </div>
+
+                <div>
+                    <label htmlFor="fechaDeFinalizacion">Fecha de finalización</label>
+                    <input
+                        type="date"
+                        id="fechaDeFinalizacion"
+                        name="fechaDeFinalizacion"
+                        placeholder={fechaDeFinalizacion}
+                        defaultValue={fechaDeFinalizacion}
+                        required
+
                     />
                 </div>
                 <button>Guardar Cambios</button>
