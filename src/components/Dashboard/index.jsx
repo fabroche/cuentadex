@@ -41,7 +41,7 @@ function Dashboard({totalPokedex, totalCapturados, cantidadDeDiaFaltante, tiempo
                 <span className="stats-card__progress-bar">
                     <span
                         className="stats-card--progress-bar-fill"
-                        style={{width: `${progress}%`}}></span>
+                        style={{width: `${progress <= 100 ? progress : 100}%`}}></span>
                 </span>
             </div>
         </section>

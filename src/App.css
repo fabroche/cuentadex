@@ -52,3 +52,7 @@ main {
 .App-result {
 text-align: center;
 }
+
+.App-result code {
+    font-size: 24px;
+}
