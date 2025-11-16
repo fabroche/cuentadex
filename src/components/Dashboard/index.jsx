@@ -17,16 +17,6 @@ function Dashboard({
                    }) {
     const progress = Math.round((totalCapturados / totalPokedex) * 100);
 
-    function handleUpdate(event,{key, value}) {
-        setData({
-            totalPokedex,
-            totalCapturados,
-            tiempoDisponibleDiario,
-            fechaDeFinalizacion,
-            [key]: value
-        });
-    }
-
     return (
         <section id="stats-container" className="App-stats-container">
 
